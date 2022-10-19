@@ -1,16 +1,15 @@
 #include "main.h"
 
-void print_alphabets_x10(void)
+void print_alphabet_x10(void);
 {
-	int n, co;
+	int count =0;
+	char letter;
 
-	co = 0;
-
-	while (co < 10)
+	while (count++ <= 9)
 	{
-		for (n = 'a'; n <= 'z'; n++)
-		{
-			_putchar('\n');
-		}
+		for (letter = 'a';letter <= 'z'; letter++)
+			_putchar(letter);
+		_putchar('\n');
 	}
+	return (0);
 }

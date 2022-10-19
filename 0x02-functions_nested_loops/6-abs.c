@@ -1,6 +1,9 @@
 #include "main.h"
 
-int _abs(int ab)
+int _abs(int n)
 {
-	return (ab * ((ab > 0) - (ab < 0)));
+	if (n >= 0)
+		return (n);
+	else
+		return (-n);
 }
