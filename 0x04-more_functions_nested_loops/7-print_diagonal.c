@@ -2,22 +2,25 @@
 
 void print_diagonal(int n)
 {
-	int co, sp:
+	int len, space;
 
 	if (n <= 0)
 	{
-		_putchar('\n');
-	}
-	else
-	{
-		for (co = 1; co <= n; co++)
+		for (len = 0; len < n; len++)
 		{
-			for (sp = 1; sp < co; sp++)
+			for (space = 0; space < len; space++)
 			{
-				_putchar(' ');
+				putchar(' ');
 			}
-			_putchar('\\');
-			_putchar('\n');
+
+			putchar('\\');
+
+			if (len == (n - 1))
+			{
+				continue;
+			}
+			putchar('\n');
 		}
 	}
+	putchar('\n');
 }
