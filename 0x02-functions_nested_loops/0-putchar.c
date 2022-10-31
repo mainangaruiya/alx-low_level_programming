@@ -1,6 +1,6 @@
 #include "main.h"
 
-int main()
+int main(void)
 {
 	char *sh = "_putchar";
 
