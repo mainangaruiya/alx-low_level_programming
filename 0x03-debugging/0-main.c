@@ -4,7 +4,6 @@
  * main - prints positive or negative integer
  *return: 0
  */
-
 int main(void)
 {
 	int i;
