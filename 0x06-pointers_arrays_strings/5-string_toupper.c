@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * string_toupper - a function that changes all lower of a string to upper
+ * @n: input string
+ * Return: capitialized string
+ */
 char *string_toupper(char *str)
 {
 	int index = 0;
