@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * leet - Entry point
+ * ONE if, TWO loops only...
+ * @n: input
+ * Return: Always 0 (Success)
+ */
 char *leet(char *str)
 {
 	int indx1 = 0, indx2;
@@ -15,6 +21,5 @@ char *leet(char *str)
 
 		indx1++;
 	}
-
 	return (str);
 }
