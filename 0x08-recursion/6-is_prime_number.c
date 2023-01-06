@@ -1,31 +1,31 @@
 #include "main.h"
-int prime_checker(int n, int i);
+
 /**
- * is_prime_number - executes prime_checker
- * @n: input to check
- * Return: Always 0 (Success)
+ * prime_check - checks to see if number is prime
+ * @f: factor check
+ * @p: possible prime number
+ *
+ * Return: 1 if prime, 0 if not
  */
-int is_prime_number(int n)
+int prime_check(int f, int p)
 {
-	if (n <= 1)
+	if (p < 2 || p % f == 0)
 		return (0);
-	else if (prime_checker(n, n / 2) > 0)
+	else if (f > p / 2)
 		return (1);
-	return (0);
+	else
+		return (prime_check(f + 1, p));
 }
 
 /**
- * prime_checker - checks for prime
- * @n: input to check
- * @i: n / 2, then passes to i - 1, checks if greater than 0
- * Return: prime check
+ * is_prime_number - states if number is prime
+ * @n: number to check
+ *
+ * Return: 1 if prime, 0 if not
  */
-int prime_checker(int n, int i)
+int is_prime_number(int n)
 {
-	if (i == 1)
+	if (n == 2)
 		return (1);
-	if (n % i == 0)
-		return (0);
-	else
-		return (prime_checker(n, i - 1));
+	return (prime_check(2, n));
 }
