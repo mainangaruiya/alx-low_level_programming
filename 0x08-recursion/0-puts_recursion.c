@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _puts_recursion - function like puts();
- * @s: input print s
- * Return: Always 0 (Success)
- */
+* _puts_recursion - function like puts();
+* @s: input print s
+* Return: Always 0 (Success)
+*/
 void _puts_recursion(char *s)
 {
 	if (*s == '\0')
