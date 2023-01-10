@@ -1,62 +1,45 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "holberton.h"
 /**
- *_strlen - count arrray
- *@s: array of elements
- *Return: i
+ * str_concat - get ends of input and add together for size
+ * @s1: input one to concat
+ * @s2: input two to concat
+ * Return: concat of s1 and s2
  */
-
-int _strlen(char *s)
-{
-	unsigned int i;
-
-	i = 0;
-	while (s[i] != '\0') /*Count character of string*/
-	{
-		i++;
-	}
-
-	return (i);
-}
-
-/**
- *str_concat - back a pointer to array
- *@s1: Array one
- *@s2: Array two
- *Return: Always an array dinamic
- */
-
 char *str_concat(char *s1, char *s2)
 {
-	char *dst;
-	unsigned int i, j, size;
+	int end1, end2, i = 0;
+	char *array;
 
-	/*If the array is empty*/
-	if (s1 == NULL)
-		s1 = "";
+	if (s1 == NULL || s2 == NULL)
+		s1 = s2 = "";
 
-	if (s2 == NULL)
-		s2 = "";
-
-	/*count size total*/
-	size = (_strlen(s1) + _strlen(s2) + 1);
-
-	/*malloc*/
-	dst = (char *) malloc(size * sizeof(char));
-
-	if (dst == 0)
+	for (end1 = 0; end1 <= *s1; end1++)
 	{
+	}
+
+	for (end2 = 0; end2 <= *s2; end2++)
+	{
+	}
+
+	array = malloc(sizeof(char) * (end1 + end2 + 1));
+
+	if (array == NULL)
 		return (NULL);
-	}
 
-	/*Concatenate arrays*/
-	for (i = 0; *(s1 + i) != '\0'; i++)
-		*(dst + i) = *(s1 + i);
-
-	for (j = 0; *(s2 + j) != '\0'; j++)
+	while (*s1)
 	{
-		*(dst + i) = *(s2 + j);
+		array[i] = *s1;
 		i++;
+		s1++;
 	}
 
-	return (dst);
+	while (*s2)
+	{
+		array[i] = *s2;
+		i++;
+		s2++;
+	}
+	return (array);
 }
