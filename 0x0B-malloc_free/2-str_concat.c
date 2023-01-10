@@ -1,45 +1,40 @@
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
-#include "holberton.h"
+
 /**
- * str_concat - get ends of input and add together for size
- * @s1: input one to concat
- * @s2: input two to concat
- * Return: concat of s1 and s2
+ * str_concat - function to concanates two strings
+ * @s1: first string
+ * @s2: second string
+ *
+ * Return: NULL on failure
  */
 char *str_concat(char *s1, char *s2)
 {
-	int end1, end2, i = 0;
-	char *array;
+	unsigned int i, j, k, l;
+	char *t;
 
-	if (s1 == NULL || s2 == NULL)
-		s1 = s2 = "";
-
-	for (end1 = 0; end1 <= *s1; end1++)
+	if (s1 == NULL)
+		i = 0;
+	else
 	{
+		for (i = 0; s1[i]; i++)
+			;
 	}
-
-	for (end2 = 0; end2 <= *s2; end2++)
+	if (s2 == NULL)
+		j = 0;
+	else
 	{
+		for (j = 0; s2[j]; j++)
+			;
 	}
-
-	array = malloc(sizeof(char) * (end1 + end2 + 1));
-
-	if (array == NULL)
+	k = i + j + 1;
+	t = malloc(k * sizeof(char));
+	if (t == NULL)
 		return (NULL);
-
-	while (*s1)
-	{
-		array[i] = *s1;
-		i++;
-		s1++;
-	}
-
-	while (*s2)
-	{
-		array[i] = *s2;
-		i++;
-		s2++;
-	}
-	return (array);
+	for (l = 0; l < i; l++)
+		t[l] = s1[l];
+	for (l = 0; l < j; l++)
+		t[l + i] = s2[l];
+	t[i + j] = '\0';
+	return (t);
 }
