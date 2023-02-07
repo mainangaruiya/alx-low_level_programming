@@ -1,1 +1,1 @@
-read me file
+bit manipulation
